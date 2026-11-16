@@ -1,0 +1,7 @@
+# AI Reflection
+
+* **Tools:** I used Gemini as a thought partner to review my array loop structure for `lottery.cpp`, verify how to temporarily substitute a fixed array for testing, check my explanation answers, and formatting the files.
+* **One decision:** I had to decide whether to compare the player's inputs inside the same loop that reads `cin >> player\[i]` or to keep input, comparison, and output in separate `for` loops. I decided to use separate `for` loops for populating `winningDigits`, reading `player`, and comparing `winningDigits\[i] == player\[i]`. Keeping the comparison in its own dedicated loop made it much easier to temporarily swap in the fixed test arrays without touching the comparison or output logic.
+* **A specific check:** I temporarily initialized `winningDigits` to `{1, 1, 2, 2, 3}` and entered `1 2 2 3 3` for the `player` array. Before running the code, I manually checked each index and predicted `3` matches (at indices `0`, `2`, and `4`). When the program output `Matching digits: 3`, it confirmed that repeated digits were only counted when they appeared in the exact same position and were not double-counted across different indices.
+* **Learning:** I can now populate, print, and compare parallel arrays element-by-element using `for` loops. One thing I still need to practice just a bit more is remembering that the last valid index of an array is always `SIZE - 1` so I never accidentally write `i <= SIZE` in a loop condition. I nearly did that while making this program.
+
